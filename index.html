@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fusion Tier Tests</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #262626;
+      --accent: #6c63ff;
+      --text-light: #f0f0f0;
+      --text-muted: #bbbbbb;
+      --highlight: #9a8cff;
+      --background-dark: #121212;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: var(--background-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(145deg, #1f1f1f, #141414);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo {
+      height: 42px;
+      width: 42px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background: #2b2b2b;
+      color: #ffffff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      color: var(--highlight);
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .perks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      padding: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #1f1f1f;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+      border: 1px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .media-links {
+      background: none;
+      text-align: center;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    .media-links h3 {
+      color: var(--highlight);
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .media-button {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      background: #1f1f1f;
+      color: var(--text-light);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 10px var(--accent), 0 0 20px rgba(108, 99, 255, 0.4);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+    }
+
+    .media-button:hover {
+      background: var(--accent);
+      color: #1f1f1f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      background: linear-gradient(to right, #2b2b2b, #191919);
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.6);
+      border-radius: 18px 18px 0 0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    footer p, footer .made-by {
+      color: var(--text-muted);
+      margin: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .media-button {
+        display: block;
+        margin: 1rem auto;
+        width: 80%;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position: absolute; left: 1.5rem;"><img src="logo.png" alt="FTL Logo" class="logo"></div>
+    <nav>
+      <a href="#">Home</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Fusion Tier Tests!</h2>
+    <p>Truly ethereal place for the Minecraft Community.</p>
+  </section>
+
+  <section class="perks" id="perks">
+    <div class="card">
+      <h3>Fusion Tier Tests</h3>
+      <p>Exclusive test events for elite members to rise through the ranks with skill-based challenges.</p>
+    </div>
+    <div class="card">
+      <h3>Top-Notch Server</h3>
+      <p>Join forces with top-tier talent across the globe and get tier-tested.</p>
+    </div>
+    <div class="card">
+      <h3>Giveaways</h3>
+      <p>Participate in regular giveaways, rewards, and surprise events for the community.</p>
+    </div>
+    <div class="card">
+      <h3>Active</h3>
+      <p>Need help or a teammate? Our community has your back, always.</p>
+    </div>
+  </section>
+
+  <section class="media-links">
+    <h3>Links</h3>
+    <a class="media-button" href="https://discord.gg/KqKyDnX695" target="_blank">Join our Discord</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FTL.</p>
+    <div class="made-by">Made by Zylwer</div>
+  </footer>
+</body>
+</html>
